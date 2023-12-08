@@ -1,0 +1,3 @@
+import '../../../core/app_export.dart';import 'userprofilelist_item_model.dart';class CommunityOneModel {List<UserprofilelistItemModel> userprofilelistItemList = [UserprofilelistItemModel(userName: "Jessy_29",timeAgo: "10s ago",description: "Nullam turpis leo, accumsan in tincidunt eu, efficitur in ligula. Integer elementum elit justo, eu finibus nunc cursus ut. ",likesImage:ImageConstant.imgHeart,likesCount: "2.4K"),UserprofilelistItemModel(userName: "Jessy_29",timeAgo: "10s ago",description: "Nullam turpis leo, accumsan in tincidunt eu, efficitur in ligula. Integer elementum elit justo, eu finibus nunc cursus ut. ")];
+
+ }

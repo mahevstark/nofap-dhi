@@ -1,0 +1,70 @@
+import '../models/subscriptionlist_item_model.dart';
+import 'package:flutter/material.dart';
+import 'package:nofapp/core/app_export.dart';
+
+// ignore: must_be_immutable
+class SubscriptionlistItemWidget extends StatelessWidget {
+  SubscriptionlistItemWidget(
+    this.subscriptionlistItemModelObj, {
+    Key? key,
+    this.onTapFrame,
+  }) : super(
+          key: key,
+        );
+
+  SubscriptionlistItemModel subscriptionlistItemModelObj;
+
+  VoidCallback? onTapFrame;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 157.h,
+      child: GestureDetector(
+        onTap: () {
+          onTapFrame!.call();
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 35.h,
+            vertical: 22.v,
+          ),
+          decoration: AppDecoration.outlineLightBlue.copyWith(
+            borderRadius: BorderRadiusStyle.roundedBorder14,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                subscriptionlistItemModelObj.freeTrailText!,
+                style: CustomTextStyles.titleLargeRegular,
+              ),
+              Text(
+                subscriptionlistItemModelObj.threeDaysFreeTrailText!,
+                style: CustomTextStyles.labelLargeGray100,
+              ),
+              SizedBox(height: 13.v),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "lbl_3".tr,
+                      style: CustomTextStyles.titleLarge20_1,
+                    ),
+                    TextSpan(
+                      text: "lbl_days".tr,
+                      style: CustomTextStyles.labelMediumOnErrorContainer,
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.left,
+              ),
+              SizedBox(height: 4.v),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
